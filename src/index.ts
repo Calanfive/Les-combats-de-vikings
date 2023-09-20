@@ -1,29 +1,13 @@
-class Pomme {
+import { Arme } from "./Arme"
+import { Combat } from "./Combat"
+import { Viking } from "./Viking"
 
-    public name: string
-    public color: string
+const gourdin = new Arme('Gourdin', 10)
+const marteau = new Arme('Marteau', 8)
 
-    constructor(
-        name: string,
-        color: string,
-    ) {
-      console.log('Initialisation de la pomme')
-      this.name = name
-      this.color = color
-    }
+const v1 = new Viking('Brutas', 150, 80, gourdin, 15)
+const v2 = new Viking('Raval', 200, 60, marteau, 8)
 
-    public eat() {
-      console.log('Je mange une pomme')
-    }
-
-    public changeColor(newColor: string) {
-      this.color = newColor
-    }
-
-}
-
-const apple = new Pomme('Golden', 'yellow')
-apple.eat()
-apple.changeColor('red')
-console.log(apple.color)
-
+const combat = new Combat(v1, v2)
+combat.simulate()
+combat.showGagnant()
