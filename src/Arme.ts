@@ -9,4 +9,5 @@ export class Arme {
         this.nom = nom;
         this.force = force;
     }
+
 }
