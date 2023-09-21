@@ -12,6 +12,7 @@ export class Personnage {
     private _mana: number;
     private _chanceCoupCritique: number;
     private _equipement: Equipement;
+    // add métier 
     
     constructor (
         nom: " ",

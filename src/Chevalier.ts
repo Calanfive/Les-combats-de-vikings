@@ -3,22 +3,13 @@ import { Metier } from "./Metier"
 export class Chevalier extends Metier {
    
     constructor() {
-        super();
-        this.santemaxbonus = 50;
+        super(40, 5, 1, 1, 5, 3);
+        this.santemaxbonus = 40;
         this.forcebonus = 5;
         this.vitessebonus = 1;
-        this._intelligencebonus = 1;
-        this._manabonus = 5;
-        this._critiquebonus = 3;
+        this.intelligencebonus = 1;
+        this.manabonus = 5;
+        this.critiquebonus = 3;
     }
 
-    
-
-    public get santemaxbonus(): number {
-        return this._santemaxbonus;
-    }
-    public set santemaxbonus(value: number) {
-        this._santemaxbonus = value;
-    }
-    
 }
