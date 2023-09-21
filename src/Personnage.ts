@@ -11,6 +11,7 @@ export class Personnage {
     private _intelligence: number;
     private _mana: number;
     private _chanceCoupCritique: number;
+    private _equipement: Equipement;
     
     constructor (
         nom: string,
@@ -35,9 +36,10 @@ export class Personnage {
             this._intelligence = intelligence;
             this._mana = mana;
             this._chanceCoupCritique = chanceCoupCritique;
+            this._equipement = equipement;
         }
         
-    public get nom(): string {
+        public get nom(): string {
         return this._nom;
     }
     public set nom(value: string) {
@@ -48,7 +50,7 @@ export class Personnage {
         return this._niveau;
     }
     public set niveau(value: number) {
-    this._niveau = value;
+        this._niveau = value;
     }
     
     public get experience(): number {
@@ -64,21 +66,21 @@ export class Personnage {
     public set type(value: string) {
         this._type = value;
     }
-
+    
     public get pv(): string {
         return this._pv;
     }
     public set pv(value: string) {
         this._pv = value;
     }
-
+    
     public get force(): number {
         return this._force;
     }
     public set force(value: number) {
         this._force = value;
     }
-
+    
     public get vitesse(): number {
         return this._vitesse;
     }
@@ -105,6 +107,13 @@ export class Personnage {
     }
     public set chanceCoupCritique_1(value: number) {
         this._chanceCoupCritique = value;
+    }
+    
+    public get equipement_1(): Equipement {
+        return this._equipement;
+    }
+    public set equipement_1(value: Equipement) {
+        this._equipement = value;
     }
     
 }
