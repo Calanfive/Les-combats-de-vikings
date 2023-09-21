@@ -1,4 +1,3 @@
-import { Arme } from "./Arme";
 import { Viking } from "./Viking";
 
 export class Combat {

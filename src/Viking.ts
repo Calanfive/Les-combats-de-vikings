@@ -14,15 +14,15 @@ export class Viking {
         nom: string,
         sante : number,
         force : number,
-      arme : Arme,
-      defense : number
+        arme : Arme,
+        defense : number
     ) {
-      this.nom = nom
-      this._santemax = sante
-      this._sante = this._santemax
-      this._force = force
-      this._arme = arme
-      this._defense = defense
+        this.nom = nom;
+        this._santemax = sante;
+        this._sante = this._santemax;
+        this._force = force;
+        this._arme = arme;
+        this._defense = defense;
     }
 
     public get force(): number {
