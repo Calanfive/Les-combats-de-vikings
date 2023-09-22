@@ -1,4 +1,4 @@
-import { Equipement } from "./Equipement";
+import { Equipement } from "./Battlefield/Equipement";
 
 export class Personnage {
     private _nom: string;
@@ -12,7 +12,6 @@ export class Personnage {
     private _mana: number;
     private _chanceCoupCritique: number;
     private _equipement: Equipement;
-    // add métier 
     
     constructor (
         nom: " ",

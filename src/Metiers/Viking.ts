@@ -1,4 +1,4 @@
-import { Arme } from "./Arme"
+import { Arme } from "../Battlefield/Arme"
 
 export class Viking {
 

@@ -1,9 +1,9 @@
-import { Metier } from "./Metier";
+import { Type } from "./Type";
 
-export class Magicien extends Metier{
+export class Magicien extends Type{
 
     constructor() {
-        super();
+        super(5, 1, 1, 5, 45, 0);
         this.santemaxbonus = 5;
         this.forcebonus = 1;
         this.vitessebonus = 1;

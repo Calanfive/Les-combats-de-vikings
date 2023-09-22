@@ -4,7 +4,7 @@ import { Voleur } from "./Voleur";
 import { Magicien } from "./Magicien";
 import { Archer } from "./Archer";
 
-export class Metier{
+export class Type{
     private _santemaxbonus: number;
     private _forcebonus: number;
     private _vitessebonus: number;

@@ -1,6 +1,6 @@
-import { Metier } from "./Metier"
+import { Type } from "./Type"
 
-export class Chevalier extends Metier {
+export class Chevalier extends Type {
    
     constructor() {
         super(40, 5, 1, 1, 5, 3);

@@ -1,6 +1,6 @@
-import { Arme } from "./Arme"
-import { Combat } from "./Combat"
-import { Viking } from "./Viking"
+import { Arme } from "./Battlefield/Arme"
+import { Combat } from "./Battlefield/Combat"
+import { Viking } from "./Metiers/Viking"
 
 const gourdin = new Arme('Gourdin', 10)
 const marteau = new Arme('Marteau', 8)
