@@ -12,25 +12,29 @@ export class Newcombat {
         this._P1 = P1;
         this._P2 = P2;
     }
-    
-    
-    comparaisonVitesse() : Personnage[] {
-    let persoArray = [this.P1,this.P2]
 
-    let sortedArray = [];
+    
+    // comparaisonVitesse() : Personnage[] {
+    // let persoArray = [this.P1,this.P2]
 
-    if(this.P1.vitesse < this.P2.vitesse){
-        sortedArray = [this.P2,this.P1]
-    }else{
-        sortedArray = [this.P1,this.P2]
+    // let sortedArray = [];
+
+    // if(this.P1.vitesse < this.P2.vitesse){
+    //     sortedArray = [this.P2,this.P1]
+    // }else{
+    //     sortedArray = [this.P1,this.P2]
+    // }
+    // return sortedArray;
+
+    // }
+
+    comparerVitesse(P1: Personnage, P2: Personnage) {
+        return this.P1.vitesse > this.P2.vitesse ? this.P1 : this.P2
+
     }
-    return sortedArray;
-}
 
-    
-    private fight() {
-        
-    }
+
+
 
     public get P1(): Personnage {
         return this._P1;

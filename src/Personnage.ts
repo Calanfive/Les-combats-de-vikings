@@ -1,10 +1,11 @@
 import { Equipement } from "./Battlefield/Equipement";
+import { Type } from "./Metiers/Type";
 
 export class Personnage {
     private _nom: string;
     private _niveau: number;
     private _experience: number;
-    private _type: string;
+    private _type: Type;
     private _pv: number;
     private _force: number;
     private _vitesse: number;
@@ -17,7 +18,7 @@ export class Personnage {
         nom: " ",
         niveau: 1,
         experience: 0,
-        type: " ",
+        type: Type,
         pv: 50,
         force: 10,
         vitesse: 10,
@@ -25,20 +26,29 @@ export class Personnage {
         mana: 50,
         chanceCoupCritique: 2,
         equipement: Equipement
+        
         ) {
             this._nom = nom;
             this._niveau = niveau;
             this._experience = experience;
             this._type = type;
-            this._pv = pv;
-            this._force = force;
-            this._vitesse = vitesse;
-            this._intelligence = intelligence;
-            this._mana = mana;
-            this._chanceCoupCritique = chanceCoupCritique;
+            this._pv = pv + this.type.santemaxbonus;
+            this._force = force + this.type.forcebonus;
+            this._vitesse = vitesse + this.type.vitessebonus;
+            this._intelligence = intelligence + this.type.intelligencebonus;
+            this._mana = mana + this.type.manabonus;
+            this._chanceCoupCritique = chanceCoupCritique + this.type.critiquebonus;
             this._equipement = equipement;
         }
-
+        // this.santemaxbonus = 40;
+        // this.forcebonus = 5;
+        // this.vitessebonus = 1;
+        // this.intelligencebonus = 1;
+        // this.manabonus = 5;
+        // this.critiquebonus = 3;
+        
+        
+        
 
     public get nom(): string {
         return this._nom;
@@ -60,14 +70,15 @@ export class Personnage {
     public set experience(value: number) {
         this._experience = value;
     }
-
-    public get type(): string {
+    
+    public get type(): Type {
         return this._type;
     }
-    public set type(value: string) {
+
+    public set type(value: Type) {
         this._type = value;
     }
-    
+
     public get pv(): number {
         return this._pv;
     }

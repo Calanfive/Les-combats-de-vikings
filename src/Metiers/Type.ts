@@ -1,8 +1,4 @@
-import { NewViking } from "./NewViking";
-import { Chevalier } from "./Chevalier";
-import { Voleur } from "./Voleur";
-import { Magicien } from "./Magicien";
-import { Archer } from "./Archer";
+
 
 export class Type{
     private _santemaxbonus: number;
