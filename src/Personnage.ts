@@ -38,7 +38,8 @@ export class Personnage {
             this._chanceCoupCritique = chanceCoupCritique;
             this._equipement = equipement;
         }
-        
+
+
     public get nom(): string {
         return this._nom;
     }

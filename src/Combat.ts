@@ -1,4 +1,4 @@
-import { Viking } from "../Metiers/Viking";
+import { Viking } from "./Metiers/Viking";
 
 export class Combat {
     public combatant1: Viking;

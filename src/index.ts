@@ -1,5 +1,5 @@
 import { Arme } from "./Battlefield/Arme"
-import { Combat } from "./Battlefield/Combat"
+import { Combat } from "./Combat"
 import { Viking } from "./Metiers/Viking"
 
 const gourdin = new Arme('Gourdin', 10)
