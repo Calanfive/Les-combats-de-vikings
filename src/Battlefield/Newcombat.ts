@@ -27,15 +27,24 @@ export class Newcombat {
     // return sortedArray;
 
     // }
+    
+    fight(P1: Personnage, P2: Personnage) {}
 
-    comparerVitesse(P1: Personnage, P2: Personnage) {
+        comparerVitesse(P1: Personnage, P2: Personnage) {
         return this.P1.vitesse > this.P2.vitesse ? this.P1 : this.P2
+        }
+        beforeAttack() {
 
-    }
+        }
+        attack() {
 
+        }
+        afterAttack() {
 
+        }
+        onHit() {
 
-
+        }
     public get P1(): Personnage {
         return this._P1;
     }

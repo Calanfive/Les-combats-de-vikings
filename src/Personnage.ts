@@ -15,7 +15,7 @@ export class Personnage {
     private _equipement: Equipement;
     
     constructor (
-        nom: " ",
+        nom: string,
         niveau: 1,
         experience: 0,
         type: Type,
@@ -26,7 +26,7 @@ export class Personnage {
         mana: 50,
         chanceCoupCritique: 2,
         equipement: Equipement
-        
+
         ) {
             this._nom = nom;
             this._niveau = niveau;

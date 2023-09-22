@@ -1,3 +1,4 @@
+import { Personnage } from "../Personnage";
 import { Type } from "./Type";
 
 export class NewViking extends Type{
@@ -12,4 +13,8 @@ export class NewViking extends Type{
         this.critiquebonus = 8;
     }
     
+    voldeVie(degats : number, attaquant : Personnage): void {
+        let vieabsorbee : number = degats * 0.15
+        attaquant.pv += vieabsorbee
+    }
 }

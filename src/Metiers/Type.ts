@@ -1,6 +1,6 @@
 
 
-export class Type{
+export class Type {
     private _santemaxbonus: number;
     private _forcebonus: number;
     private _vitessebonus: number;
