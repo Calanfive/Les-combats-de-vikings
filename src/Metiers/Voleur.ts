@@ -1,6 +1,6 @@
-import { Type } from "./Type";
+import { CharacterType } from "./CharacterType";
 
-export class Voleur extends Type{
+export class Voleur extends CharacterType{
 
     constructor() {
         super(5, 1, 1, 5, 45, 0);

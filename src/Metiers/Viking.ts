@@ -28,7 +28,7 @@ export class Viking {
     public get force(): number {
         return this._force + this._arme.force
     }
-
+    
     takeDamage(adversaire: Viking){
         let randomLucky = Math.random() * 100;
         let damageForce = adversaire.force

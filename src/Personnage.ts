@@ -1,11 +1,11 @@
 import { Equipement } from "./Battlefield/Equipement";
-import { Type } from "./Metiers/Type";
+import { CharacterType } from "./Metiers/CharacterType";
 
 export class Personnage {
     private _nom: string;
     private _niveau: number;
     private _experience: number;
-    private _type: Type;
+    private _type: CharacterType;
     private _pv: number;
     private _force: number;
     private _vitesse: number;
@@ -18,7 +18,7 @@ export class Personnage {
         nom: string,
         niveau: 1,
         experience: 0,
-        type: Type,
+        type: CharacterType,
         pv: 50,
         force: 10,
         vitesse: 10,
@@ -40,15 +40,16 @@ export class Personnage {
             this._chanceCoupCritique = chanceCoupCritique + this.type.critiquebonus;
             this._equipement = equipement;
         }
-        // this.santemaxbonus = 40;
-        // this.forcebonus = 5;
-        // this.vitessebonus = 1;
-        // this.intelligencebonus = 1;
-        // this.manabonus = 5;
-        // this.critiquebonus = 3;
-        
-        
-        
+
+        takeDamage(adversaire: Personnage) {
+            let randomLucky = Math.random() * 100;
+            let damageForce = adversaire.force
+            
+            if (randomLucky < 10) {
+                let criticalKick = adversaire.force * 2
+                damageForce = criticalKick
+            }
+        }
 
     public get nom(): string {
         return this._nom;
@@ -71,11 +72,11 @@ export class Personnage {
         this._experience = value;
     }
     
-    public get type(): Type {
+    public get type(): CharacterType {
         return this._type;
     }
 
-    public set type(value: Type) {
+    public set type(value: CharacterType) {
         this._type = value;
     }
 

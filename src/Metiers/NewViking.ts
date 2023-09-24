@@ -1,20 +1,17 @@
 import { Personnage } from "../Personnage";
-import { Type } from "./Type";
+import { CharacterType } from "./CharacterType";
 
-export class NewViking extends Type{
+export class NewViking extends CharacterType{
 
     constructor() {
         super(50, 4, 2, 0, 0, 8);
-        this.santemaxbonus = 50;
-        this.forcebonus = 4;
-        this.vitessebonus = 2;
-        this.intelligencebonus = 0;
-        this.manabonus = 0;
-        this.critiquebonus = 8;
     }
     
     voldeVie(degats : number, attaquant : Personnage): void {
-        let vieabsorbee : number = degats * 0.15
-        attaquant.pv += vieabsorbee
+        let vieAbsorbee = degats * 0.15
+        attaquant.pv += vieAbsorbee
+
+        let manaAbsorbe = degats * 0.03
+        attaquant.mana += manaAbsorbe
     }
 }

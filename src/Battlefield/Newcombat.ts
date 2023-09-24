@@ -45,6 +45,7 @@ export class Newcombat {
         onHit() {
 
         }
+        
     public get P1(): Personnage {
         return this._P1;
     }
