@@ -7,6 +7,9 @@ export class Magicien extends CharacterType{
         super(5, 1, 1, 5, 45, 0);
     }
 
-    recupMana() : 
+    recupMana(joueurMage: Personnage) : void {
+        let recupMana = joueurMage.intelligence * 1/2
+        joueurMage.mana += recupMana
+    }
     
 }
