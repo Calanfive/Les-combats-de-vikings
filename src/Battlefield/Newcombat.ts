@@ -33,6 +33,7 @@ export class Newcombat {
         comparerVitesse(P1: Personnage, P2: Personnage) {
         return this.P1.vitesse > this.P2.vitesse ? this.P1 : this.P2
         }
+        
         beforeAttack() {
 
         }
@@ -45,7 +46,7 @@ export class Newcombat {
         onHit() {
 
         }
-        
+
     public get P1(): Personnage {
         return this._P1;
     }

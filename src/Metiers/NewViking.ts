@@ -4,7 +4,7 @@ import { CharacterType } from "./CharacterType";
 export class NewViking extends CharacterType{
 
     constructor() {
-        super(50, 4, 2, 0, 0, 8);
+        super(25, 4, 2, 0, 0, 8);
     }
     
     voldeVie(degats : number, attaquant : Personnage): void {

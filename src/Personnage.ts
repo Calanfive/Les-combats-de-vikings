@@ -16,17 +16,16 @@ export class Personnage {
     
     constructor (
         nom: string,
-        niveau: 1,
-        experience: 0,
         type: CharacterType,
-        pv: 50,
-        force: 10,
-        vitesse: 10,
-        intelligence: 10,
-        mana: 50,
-        chanceCoupCritique: 2,
-        equipement: Equipement
-
+        equipement: Equipement,
+        niveau = 1,
+        experience = 0,
+        pv = 50,
+        force = 10,
+        vitesse = 10,
+        intelligence = 10,
+        mana = 50,
+        chanceCoupCritique = 2
         ) {
             this._nom = nom;
             this._niveau = niveau;
@@ -50,6 +49,11 @@ export class Personnage {
                 damageForce = criticalKick
             }
         }
+
+        showCaracteristics(){
+            console.log(`${this.nom} a ${this.pv} PV`);
+        }
+    
 
     public get nom(): string {
         return this._nom;
@@ -81,42 +85,42 @@ export class Personnage {
     }
 
     public get pv(): number {
-        return this._pv;
+        return this._pv + this.type.santemaxbonus;
     }
     public set pv(value: number) {
         this._pv = value;
     }
     
     public get force(): number {
-        return this._force;
+        return this._force + this.type.forcebonus;
     }
     public set force(value: number) {
         this._force = value;
     }
     
     public get vitesse(): number {
-        return this._vitesse;
+        return this._vitesse + this.type.vitessebonus;
     }
     public set vitesse(value: number) {
         this._vitesse = value;
     }
 
     public get intelligence(): number {
-        return this._intelligence;
+        return this._intelligence + this.type.intelligencebonus;
     }
     public set intelligence(value: number) {
         this._intelligence = value;
     }
 
     public get mana(): number {
-        return this._mana;
+        return this._mana + this.type.manabonus;
     }
     public set mana(value: number) {
         this._mana = value;
     }
     
     public get chanceCoupCritique_1(): number {
-        return this._chanceCoupCritique;
+        return this._chanceCoupCritique  + this.type.critiquebonus;
     }
     public set chanceCoupCritique_1(value: number) {
         this._chanceCoupCritique = value;

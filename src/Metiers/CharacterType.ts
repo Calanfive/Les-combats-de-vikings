@@ -1,5 +1,4 @@
 
-
 export class CharacterType {
     private _santemaxbonus: number;
     private _forcebonus: number;
