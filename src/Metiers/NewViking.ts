@@ -13,5 +13,7 @@ export class NewViking extends CharacterType{
 
         let manaAbsorbe = degats * 0.03
         attaquant.mana += manaAbsorbe
+        console.log(`Le viking récupère ${vieAbsorbee} de vie et ${manaAbsorbe} de mana à près son attaque!`);
+        
     }
 }

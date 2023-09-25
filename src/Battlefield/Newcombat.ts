@@ -30,7 +30,7 @@ export class Newcombat {
     
     fight(P1: Personnage, P2: Personnage) {}
 
-        comparerVitesse(P1: Personnage, P2: Personnage) {
+        comparerVitesse() {
         return this.P1.vitesse > this.P2.vitesse ? this.P1 : this.P2
         }
         

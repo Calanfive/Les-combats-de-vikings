@@ -35,6 +35,6 @@ import { Magicien } from "./Metiers/Magicien"
 // console.log(player5);
 
 const archer = new Archer()
-const perso = new Personnage("camille", archer, new Equipement('arc ange'))
+const perso = new Personnage("camille", archer, new Equipement('arc ange'), 40)
 console.log(perso);
 

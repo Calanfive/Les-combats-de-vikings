@@ -13,11 +13,11 @@ export class Archer extends CharacterType {
         if (joueurArcher.vitesse > joueurAdv.vitesse) {
             let degatsPiege = joueurArcher.force * 2.50
             joueurAdv.pv -= degatsPiege
-            console.log(`l'adversaire est tombé dans le piège, sa vie est maintenant de ${joueurAdv.pv}`);
+            console.log(`l'adversaire est tombé dans le piège, sa vie est maintenant de ${joueurAdv.pv}.`);
         }   
 
         else {
-            console.log("archer, vitesse manquante, pas de piège posé");
+            console.log("archer, vitesse manquante, pas de piège posé.");
         }
     }
 }

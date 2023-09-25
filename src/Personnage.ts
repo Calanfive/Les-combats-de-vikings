@@ -18,10 +18,10 @@ export class Personnage {
         nom: string,
         type: CharacterType,
         equipement: Equipement,
+        force = 10,
         niveau = 1,
         experience = 0,
         pv = 50,
-        force = 10,
         vitesse = 10,
         intelligence = 10,
         mana = 50,
@@ -32,7 +32,7 @@ export class Personnage {
             this._experience = experience;
             this._type = type;
             this._pv = pv + this.type.santemaxbonus;
-            this._force = force + this.type.forcebonus;
+            this._force = force
             this._vitesse = vitesse + this.type.vitessebonus;
             this._intelligence = intelligence + this.type.intelligencebonus;
             this._mana = mana + this.type.manabonus;

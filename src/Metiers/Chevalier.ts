@@ -10,6 +10,8 @@ export class Chevalier extends CharacterType {
     bouclier(forceAdv: number, defenseur: Personnage): void {
         let degatsSubis = forceAdv - (forceAdv * 0.25)
         defenseur.pv -= degatsSubis
+        console.log(`Bouclier ! La vie du chevalier est desormais de ${defenseur.pv}.`);
+        
     }
 
 }

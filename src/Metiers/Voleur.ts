@@ -10,5 +10,7 @@ export class Voleur extends CharacterType{
     attaqueSurprise(joueurVoleur: Personnage, joueurAdv: Personnage): void{
         let coupCritique = joueurVoleur.force * 2.50
         joueurAdv.pv -= coupCritique
+        console.log(`Le voleur a infligé ${coupCritique} avec son attaque surprise!`);
+        
     }
 }

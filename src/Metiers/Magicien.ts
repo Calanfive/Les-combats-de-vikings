@@ -10,6 +10,6 @@ export class Magicien extends CharacterType{
     recupMana(joueurMage: Personnage) : void {
         let recupMana = joueurMage.intelligence * 1/2
         joueurMage.mana += recupMana
+        console.log(`Le magicien récupère ${recupMana} grâce à ses pouvoirs magiques.`);
     }
-    
 }
