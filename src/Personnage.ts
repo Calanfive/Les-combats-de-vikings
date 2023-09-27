@@ -1,27 +1,26 @@
 import { Equipement } from "./Battlefield/Equipement";
 import { CharacterType } from "./Metiers/CharacterType";
 
-export class Personnage {
+export abstract class Personnage {
     private _nom: string;
     private _niveau: number;
     private _experience: number;
     private _type: CharacterType;
-    private _pv: number;
+    private _currentPV: number;
+    private _maxPV: number;
     private _force: number;
     private _vitesse: number;
     private _intelligence: number;
     private _mana: number;
     private _chanceCoupCritique: number;
-    private _equipement: Equipement;
     
-    constructor (
-        nom: string,
+    constructor (nom: string,
         type: CharacterType,
-        equipement: Equipement,
         force = 10,
         niveau = 1,
         experience = 0,
-        pv = 50,
+        currentPV = 50,
+        maxPV = currentPV,
         vitesse = 10,
         intelligence = 10,
         mana = 50,
@@ -31,27 +30,65 @@ export class Personnage {
             this._niveau = niveau;
             this._experience = experience;
             this._type = type;
-            this._pv = pv + this.type.santemaxbonus;
-            this._force = force
+            this._currentPV = currentPV;
+            this._maxPV = maxPV + this.type.santemaxbonus;
+            this._force = force + this.type.forcebonus;
             this._vitesse = vitesse + this.type.vitessebonus;
             this._intelligence = intelligence + this.type.intelligencebonus;
             this._mana = mana + this.type.manabonus;
             this._chanceCoupCritique = chanceCoupCritique + this.type.critiquebonus;
-            this._equipement = equipement;
         }
 
-        takeDamage(adversaire: Personnage) {
-            let randomLucky = Math.random() * 100;
-            let damageForce = adversaire.force
-            
-            if (randomLucky < 10) {
-                let criticalKick = adversaire.force * 2
-                damageForce = criticalKick
+        abstract TriggerBeforeAttack(target: Personnage): any
+    
+        abstract TriggerAttack(target: Personnage, attack_result : number) : any
+    
+        abstract TriggerAfterAttack(target: Personnage) : any
+        
+        BeforeAttack(target: Personnage) {
+            this.TriggerBeforeAttack(target);
+        }
+        
+        ClassicalAttack(): number {
+            let dommage: number = this._force;
+    
+            if(Math.random() < this._chanceCoupCritique) {
+                dommage *= 2
+            }
+            return dommage;
+        }
+    
+        Attack(target: Personnage) : number{
+            let attack_result = this.ClassicalAttack()
+            target._currentPV -= attack_result;
+            this.TriggerAttack(target, attack_result)
+    
+            return attack_result;
+        }
+    
+        AfterAttack(target: Personnage) {
+            this.TriggerAfterAttack(target);
+        }
+    
+        Heal(regainHP: number) {
+            if (regainHP + this._currentPV > this._maxPV) {
+                this._currentPV = this._maxPV
+            } else { 
+                this._currentPV += regainHP
             }
         }
-
-        showCaracteristics(){
-            console.log(`${this.nom} a ${this.pv} PV`);
+        
+        AbsorbMana(manaleech: number) {
+            this.mana += manaleech;
+        }
+    
+        // levelUp(): any { 
+        //     //TODO  
+        // }
+    
+        isDead(): boolean {
+            return this._currentPV <= 0;
+    
         }
     
 
@@ -84,13 +121,22 @@ export class Personnage {
         this._type = value;
     }
 
-    public get pv(): number {
-        return this._pv + this.type.santemaxbonus;
+    public get currentPV(): number {
+        return this._currentPV + this.type.santemaxbonus
     }
-    public set pv(value: number) {
-        this._pv = value;
+    public set currentPV(value: number) {
+        this._currentPV = value;
     }
     
+
+    public get maxPV(): number {
+        return this._maxPV + this.type.santemaxbonus;
+    }
+    public set maxPV(value: number) {
+        this._maxPV = value;
+    }
+
+
     public get force(): number {
         return this._force + this.type.forcebonus;
     }
@@ -124,13 +170,6 @@ export class Personnage {
     }
     public set chanceCoupCritique_1(value: number) {
         this._chanceCoupCritique = value;
-    }
-
-    public get equipement_1(): Equipement {
-        return this._equipement;
-    }
-    public set equipement_1(value: Equipement) {
-        this._equipement = value;
     }
     
 }

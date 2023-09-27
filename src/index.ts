@@ -8,6 +8,7 @@ import { NewViking } from "./Metiers/NewViking"
 import { Chevalier } from "./Metiers/Chevalier"
 import { Voleur } from "./Metiers/Voleur"
 import { Magicien } from "./Metiers/Magicien"
+import { Newcombat } from "./Battlefield/Newcombat"
 
 
 // const gourdin = new Arme('Gourdin', 10)
@@ -20,11 +21,6 @@ import { Magicien } from "./Metiers/Magicien"
 // combat.simulate()
 // combat.showGagnant()
 
-
-
-// const player2 = new NewViking()
-// console.log(player2);
-
 // const player3 = new Chevalier()
 // console.log(player3);
 
@@ -34,7 +30,20 @@ import { Magicien } from "./Metiers/Magicien"
 // const player5 = new Magicien()
 // console.log(player5);
 
-const archer = new Archer()
-const perso = new Personnage("camille", archer, new Equipement('arc ange'), 40)
-console.log(perso);
+const archer1 = new Archer()
+const viking1 = new NewViking()
+
+let Ava = new Hero();
+let Harald = new Hero()
+
+
+
+console.log(Ava)
+console.log(Harald)
+
+let FightManager = new Newcombat(Ava, Harald);
+
+FightManager.OneTurn();
+
+FightManager.Fight();
 

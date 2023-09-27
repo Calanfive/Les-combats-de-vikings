@@ -16,7 +16,7 @@ export class CharacterType {
         critiquebonus: number
         )  {
             this._santemaxbonus = santemaxbonus;
-            this._forcebonus = forcebonus ;
+            this._forcebonus = forcebonus;
             this._vitessebonus = vitessebonus;
             this._intelligencebonus = intelligencebonus;
             this._manabonus = manabonus;
