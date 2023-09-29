@@ -3,14 +3,16 @@ import { Personnage } from "../Personnage";
 
 export class Voleur extends CharacterType{
 
+    SpecialapacityBeforeFight(char: Personnage, target: Personnage) {
+    }
+
     SpecialBeforeAttackCapacity(char: Personnage, target: Personnage) {
-        throw new Error("Method not implemented.");
     }
+
     SpecialAttackCapacity(char: Personnage, target: Personnage, attack_result: any) {
-        throw new Error("Method not implemented.");
     }
+
     SpecialAfterAttackCapacity(char: Personnage, target: Personnage) {
-        throw new Error("Method not implemented.");
     }
     
     constructor() {

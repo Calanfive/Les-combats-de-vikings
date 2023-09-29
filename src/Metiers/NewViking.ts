@@ -9,11 +9,11 @@ export class NewViking extends CharacterType{
     SpecialBeforeAttackCapacity(char: Personnage, target: Personnage) {
         
     }
-    SpecialAttackCapacity(char: Personnage, target: Personnage, attack_result: any) {
-        throw new Error("Method not implemented."); 
+    SpecialAttackCapacity(char: Personnage, target: Personnage, attack_result: number) {
+        this.voldeVie(attack_result, char);
     }
+
     SpecialAfterAttackCapacity(char: Personnage, target: Personnage) {
-        throw new Error("Method not implemented.");
     }
     
     constructor() {

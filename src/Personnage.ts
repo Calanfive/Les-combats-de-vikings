@@ -1,5 +1,5 @@
-import { Equipement } from "./Battlefield/Equipement";
 import { CharacterType } from "./Metiers/CharacterType";
+import { Iobjet } from "./Objets/Objet";
 
 export abstract class Personnage {
 
@@ -14,6 +14,7 @@ export abstract class Personnage {
     private _intelligence: number;
     private _mana: number;
     private _chanceCoupCritique: number;
+    private _equipement: Iobjet[];
     
     constructor (nom: string,
         type: CharacterType,
@@ -25,7 +26,8 @@ export abstract class Personnage {
         vitesse = 10,
         intelligence = 10,
         mana = 50,
-        chanceCoupCritique = 2
+        chanceCoupCritique = 2,
+        equipement = []
         ) {
             this._nom = nom;
             this._niveau = niveau;
@@ -38,6 +40,7 @@ export abstract class Personnage {
             this._intelligence = intelligence + this.type.intelligencebonus;
             this._mana = mana + this.type.manabonus;
             this._chanceCoupCritique = chanceCoupCritique + this.type.critiquebonus;
+            this._equipement = equipement
         }
 
         onFightBeginning(target : Personnage) {
@@ -175,6 +178,13 @@ export abstract class Personnage {
     }
     public set chanceCoupCritique_1(value: number) {
         this._chanceCoupCritique = value;
+    }
+
+    public get equipement(): Iobjet[] {
+        return this._equipement;
+    }
+    public set equipement(value: Iobjet[]) {
+        this._equipement = value;
     }
     
 }

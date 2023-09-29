@@ -6,6 +6,8 @@ import { Voleur } from "./Metiers/Voleur"
 import { Magicien } from "./Metiers/Magicien"
 import { Newcombat } from "./Battlefield/Newcombat"
 import { Hero } from "./Metiers/Hero";
+import { Epee } from "./Objets/Epee"
+import { Hache } from "./Objets/Hache"
 
 
 // const gourdin = new Arme('Gourdin', 10)
@@ -33,12 +35,17 @@ const viking1 = new NewViking()
 let Ava = new Hero("Ava", archer1);
 let Harald = new Hero("Harald", viking1)
 
-console.log(Ava)
-console.log(Harald)
-
 let FightManager = new Newcombat(Ava, Harald);
 
 FightManager.OneTurn();
 
 FightManager.Fight();
+// name: string, prix: number, poids: number, niveau: number, giveForce: number, giveIntell: number, giveVitss: number
+let epee1 = new Epee("Lame de sang", 5, 2, 1, 1, 2, 1)
+
+// Ava.use(epee1)
+
+console.log(Ava.currentPV);
+
+//let hache1 = new Hache()
 
