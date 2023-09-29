@@ -1,5 +1,6 @@
+import { Personnage } from "../Personnage";
 
-export class CharacterType {
+export abstract class CharacterType {
     private _santemaxbonus: number;
     private _forcebonus: number;
     private _vitessebonus: number;
@@ -22,6 +23,12 @@ export class CharacterType {
             this._manabonus = manabonus;
             this._critiquebonus = critiquebonus;
     }
+
+    abstract SpecialBeforeAttackCapacity(char : Personnage, target: Personnage) : any
+    
+    abstract SpecialAttackCapacity(char: Personnage, target: Personnage, attack_result: any) : any
+    
+    abstract SpecialAfterAttackCapacity(char : Personnage, target: Personnage) : any
     
     public get santemaxbonus(): number {
         return this._santemaxbonus;

@@ -1,7 +1,3 @@
-import { Arme } from "./Battlefield/Arme"
-import { Equipement } from "./Battlefield/Equipement"
-import { Combat } from "./Combat"
-import { Personnage } from "./Personnage"
 import { Viking } from "./Metiers/Viking"
 import { Archer } from "./Metiers/Archer"
 import { NewViking } from "./Metiers/NewViking"
@@ -9,6 +5,7 @@ import { Chevalier } from "./Metiers/Chevalier"
 import { Voleur } from "./Metiers/Voleur"
 import { Magicien } from "./Metiers/Magicien"
 import { Newcombat } from "./Battlefield/Newcombat"
+import { Hero } from "./Metiers/Hero";
 
 
 // const gourdin = new Arme('Gourdin', 10)
@@ -33,10 +30,8 @@ import { Newcombat } from "./Battlefield/Newcombat"
 const archer1 = new Archer()
 const viking1 = new NewViking()
 
-let Ava = new Hero();
-let Harald = new Hero()
-
-
+let Ava = new Hero("Ava", archer1);
+let Harald = new Hero("Harald", viking1)
 
 console.log(Ava)
 console.log(Harald)

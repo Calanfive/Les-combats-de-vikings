@@ -6,7 +6,7 @@ export class Hero extends Personnage{
     private _job?: CharacterType
 
     constructor(nom: string, job: CharacterType) {
-        super(nom)
+        super(nom, job)
         this.job = job,
         this.maxPV = 50 + this.job.santemaxbonus
         this.currentPV = this.maxPV 
