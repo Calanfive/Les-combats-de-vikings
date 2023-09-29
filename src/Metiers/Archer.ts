@@ -3,15 +3,19 @@ import { Personnage } from "../Personnage";
 
 
 export class Archer extends CharacterType {
+    SpecialapacityBeforeFight(attaquant: Personnage, target : Personnage) {
+        this.poseDePiege(attaquant, target)
+    }
     
     SpecialBeforeAttackCapacity(char: Personnage, target: Personnage) {
-        throw new Error("Method not implemented.");
+        
     }
+
     SpecialAttackCapacity(char: Personnage, target: Personnage, attack_result: any) {
-        throw new Error("Method not implemented.");
     }
+
     SpecialAfterAttackCapacity(char: Personnage, target: Personnage) {
-        throw new Error("Method not implemented.");
+
     }
    
     constructor() {

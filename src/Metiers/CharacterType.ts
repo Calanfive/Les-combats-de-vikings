@@ -7,7 +7,7 @@ export abstract class CharacterType {
     private _intelligencebonus: number;
     private _manabonus: number;
     private _critiquebonus: number;
-
+    
     constructor (
         santemaxbonus: number,
         forcebonus: number,
@@ -23,6 +23,7 @@ export abstract class CharacterType {
             this._manabonus = manabonus;
             this._critiquebonus = critiquebonus;
     }
+    abstract SpecialapacityBeforeFight(char: Personnage, target: Personnage): any
 
     abstract SpecialBeforeAttackCapacity(char : Personnage, target: Personnage) : any
     

@@ -17,8 +17,8 @@ export class Newcombat {
     }
 
     Fight() { 
-        //this.perso1.onFightBeginning()//À implémenter TP J2
-        //this.perso2.onFightBeginning()//À implémenter TP J2
+        this.perso1.onFightBeginning(this.perso2)//À implémenter TP J2
+        this.perso2.onFightBeginning(this.perso1)//À implémenter TP J2
         while (!this.perso1.isDead() && !this.perso2.isDead()) {
             this.OneTurn();
         }

@@ -2,6 +2,7 @@ import { Equipement } from "./Battlefield/Equipement";
 import { CharacterType } from "./Metiers/CharacterType";
 
 export abstract class Personnage {
+
     private _nom: string;
     private _niveau: number;
     private _experience: number;
@@ -38,6 +39,8 @@ export abstract class Personnage {
             this._mana = mana + this.type.manabonus;
             this._chanceCoupCritique = chanceCoupCritique + this.type.critiquebonus;
         }
+
+        abstract onFightBeginning(): any
 
         abstract TriggerBeforeAttack(target: Personnage): any
     
