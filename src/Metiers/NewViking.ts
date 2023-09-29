@@ -2,12 +2,15 @@ import { Personnage } from "../Personnage";
 import { CharacterType } from "./CharacterType";
 
 export class NewViking extends CharacterType{
+    SpecialapacityBeforeFight(char: Personnage, target: Personnage) {
+        
+    }
 
     SpecialBeforeAttackCapacity(char: Personnage, target: Personnage) {
-        throw new Error("Method not implemented.");
+        
     }
     SpecialAttackCapacity(char: Personnage, target: Personnage, attack_result: any) {
-        throw new Error("Method not implemented.");
+        throw new Error("Method not implemented."); 
     }
     SpecialAfterAttackCapacity(char: Personnage, target: Personnage) {
         throw new Error("Method not implemented.");

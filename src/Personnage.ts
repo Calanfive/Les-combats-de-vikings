@@ -40,8 +40,10 @@ export abstract class Personnage {
             this._chanceCoupCritique = chanceCoupCritique + this.type.critiquebonus;
         }
 
-        abstract onFightBeginning(): any
-
+        onFightBeginning(target : Personnage) {
+            this.type.SpecialapacityBeforeFight(this, target);
+        } 
+    
         abstract TriggerBeforeAttack(target: Personnage): any
     
         abstract TriggerAttack(target: Personnage, attack_result : number) : any
